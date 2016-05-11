@@ -35,7 +35,7 @@ module CountryList
 
       def load_country_codes!
         puts "load_country_codes!"
-        YAML.load_file(datafile_path(%w(data country_codes.yaml)))
+        YAML.load_file(datafile_path(%w(country_data country_codes.yaml)))
       end
 
     end
