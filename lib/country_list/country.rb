@@ -19,28 +19,34 @@ class Country
   end
 
   def initialize(country_code)
-    Country.load_cached_countries unless @@cached_countries
-    @data = @@cached_countries[country_code]
+    @data = CountryList::Data.new(country_code).call
+  end
+
+  def <=>(other)
+    to_s <=> other.to_s
+  end
+
+  def ==(other)
+    @data == other.data
   end
 
   def valid?
     !(@data.nil? || @data.empty?)
   end
 
-  def country_initialize(country_data)
-    @data = country_data.is_a?(Hash) ? country_data : ISO3166::Data.new(country_data).call
+  def to_s
+    name
   end
 
   def in_europe?
-    @data['eu_member'].nil? ? false : @data['eu_member']
+    @data && @data['eu_member'].nil? ? false : @data['eu_member']
   end
 
   class << self
 
     # Returns big array with all countries
     def all
-      Country.load_cached_countries unless @@cached_countries
-      @@cached_countries
+      CountryList::Data.countries.map{ |country_code, data| Country.new(country_code) }
     end
 
     def [](country_code)
@@ -49,15 +55,7 @@ class Country
     end
 
     def country_codes
-      @@country_codes ||= YAML.load_file(datafile_path(%w(data country_codes.yaml)))
-    end
-
-    def load_cached_countries
-      @@cached_countries ||= Marshal.load(File.binread(datafile_path(%w(cache countries ))))
-    end
-
-    def datafile_path(file_array)
-      File.join([File.dirname(__FILE__)] + file_array)
+      CountryList::Data.country_codes
     end
 
   end
