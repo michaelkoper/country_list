@@ -41,6 +41,7 @@ class Country
   def in_europe?
     @data && @data['eu_member'].nil? ? false : @data['eu_member']
   end
+  alias_method :eu_member?, :in_europe?
 
   class << self
 

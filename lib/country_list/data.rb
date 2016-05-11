@@ -29,12 +29,10 @@ module CountryList
       alias_method :countries, :load_cached_countries
 
       def load_countries!
-        puts "load_countries!"
         Marshal.load(File.binread(datafile_path(%w(cache countries ))))
       end
 
       def load_country_codes!
-        puts "load_country_codes!"
         YAML.load_file(datafile_path(%w(country_data country_codes.yaml)))
       end
 
