@@ -1,6 +1,8 @@
 # CountryList
 
-I needed something very simular to http://github.com/hexorx/countries but without any dependencies and a lot smaller and simpler. All kudos go to those guys! CountryList is a very tiny gem that basically gets all the countries and makes tiny little country objects with some very basic information inside each of them.
+I needed something very similar to http://github.com/hexorx/countries, but smaller, simpler and without any dependencies. CountryList is a tiny gem that gets all the countries, and makes country objects with some basic information inside each of them.
+
+Inspired by [countries](http://github.com/hexorx/countries)
 
 ## Installation
 
@@ -14,13 +16,13 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+Or install it yourself:
 
     $ gem install country_list
 
 ## Usage
 
-Simply create a country object like this:
+Create a country object:
 
     country = Country.new('NL')
     # or like this
@@ -64,4 +66,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/michae
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
