@@ -3,3 +3,4 @@ JE:
   alpha2: JE
   name: Jersey
   eu_member: false
+  continent: Europe

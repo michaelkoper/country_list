@@ -3,3 +3,4 @@ CI:
   alpha2: CI
   name: Côte D'Ivoire
   eu_member: false
+  continent: Africa

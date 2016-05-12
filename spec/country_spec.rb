@@ -50,6 +50,18 @@ describe Country do
     end
   end
 
+  describe "eu_member?" do
+    it "is true if country is a member of eu" do
+      country = Country.new('NL')
+      expect(country).to be_eu_member
+    end
+
+    it "is not true if country is not a member of eu" do
+      country = Country.new('NO')
+      expect(country).to_not be_eu_member
+    end
+  end
+
   it "returns alpha2 code" do
     expect(country.alpha2).to eq('NL')
   end

@@ -3,3 +3,4 @@ BE:
   alpha2: BE
   name: Belgium
   eu_member: true
+  continent: Europe

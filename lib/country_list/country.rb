@@ -38,10 +38,13 @@ class Country
     name
   end
 
-  def in_europe?
+  def eu_member?
     @data && @data['eu_member'].nil? ? false : @data['eu_member']
   end
-  alias_method :eu_member?, :in_europe?
+
+  def in_europe?
+    @data && @data['continent'].nil? ? false : @data['continent'] == 'Europe'
+  end
 
   class << self
 
