@@ -66,6 +66,10 @@ describe Country do
     expect(country.alpha2).to eq('NL')
   end
 
+  it "returns currency_code" do
+    expect(country.currency_code).to eq('EUR')
+  end
+
   describe 'to_s' do
     it 'should return the country name' do
       expect(Country.new('NL').to_s).to eq('Netherlands')

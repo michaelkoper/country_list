@@ -4,3 +4,4 @@ LU:
   name: Luxembourg
   eu_member: true
   continent: Europe
+  currency_code: EUR

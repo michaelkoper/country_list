@@ -9,7 +9,8 @@ class Country
   ATTR_READERS = [
     :alpha2,
     :name,
-    :eu_member
+    :eu_member,
+    :currency_code
   ]
 
   ATTR_READERS.each do |meth|

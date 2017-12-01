@@ -4,3 +4,4 @@ BR:
   name: Brazil
   eu_member: false
   continent: South America
+  currency_code: BRL

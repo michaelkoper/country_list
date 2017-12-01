@@ -4,3 +4,4 @@ AM:
   name: Armenia
   eu_member: false
   continent: Asia
+  currency_code: AMD
