@@ -42,6 +42,7 @@ Get useful information about a country
     country.name # => 'Netherlands'
     country.eu_member? # => true
     country.alpha2 # => 'NL'
+    country.currency_code # => 'EUR'
 
 Compare countries
 
